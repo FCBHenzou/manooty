@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // Timer since 2019-08-17
   function updateTimer(){
-    const start = new Date('2019-08-17T00:00:00');
+    const start = new Date('2012-08-17T00:00:00');
     const now = new Date();
     let diff = Math.max(0, now - start);
     const days = Math.floor(diff / (1000*60*60*24));
