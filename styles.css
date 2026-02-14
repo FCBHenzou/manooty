@@ -1,0 +1,51 @@
+:root{--accent:#8e2de2;--bg1:#f5e3ff;--bg2:#cfa8ff}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,var(--bg1),var(--bg2))}
+.overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:100}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:22px;border-radius:12px;width:360px;text-align:center;color:#fff;border:1px solid rgba(255,255,255,0.04)}
+.card input{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:white;margin-bottom:12px}
+.btn, .card button{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:white;cursor:pointer}
+.muted{color:#e8dffa;margin-top:8px;font-size:14px}
+.hidden{display:none!important}
+.rose{font-size:46px;background:transparent;border:0;cursor:pointer}
+body.main-page{padding:24px}
+nav{position:fixed;top:0;left:0;right:0;padding:14px 20px;background:linear-gradient(135deg,#d9b6ff,#f1d9ff);font-family:'Great Vibes',cursive;color:#6b1fb3;z-index:10}
+.container{max-width:900px;margin:110px auto 40px;padding:0 16px}
+h1{font-family:'Great Vibes',cursive;color:#6b1fb3;text-align:center;font-size:38px;margin-bottom:10px}
+.music-card{max-width:700px;margin:18px auto;background:linear-gradient(135deg,#8e2de2,#c471ed);border-radius:12px;padding:12px;color:#fff;display:flex;gap:12px;align-items:center}
+.music-img{width:96px;height:96px;object-fit:cover;border-radius:8px}
+.controls{display:flex;gap:8px}
+.carousel-inner{display:flex;gap:12px;overflow-x:auto;padding:12px;scroll-snap-type:x mandatory}
+.carousel-inner img{width:320px;height:320px;object-fit:cover;border-radius:10px;scroll-snap-align:center}
+.timer{text-align:center;font-family:'Great Vibes',cursive;color:#6b1fb3;margin-top:8px;font-size:20px}
+.next-btn{display:block;margin:20px auto;padding:12px 28px;border-radius:30px;border:0;background:#a555ec;color:#fff;cursor:pointer}
+.footer{margin-top:30px;text-align:center;color:#6b1fb3}
+@media(max-width:600px){.carousel-inner img{width:220px;height:220px}}
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 22px;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 5;
+}
+
+.arrow.left {
+  left: 5px;
+}
+.arrow.right {
+  right: 5px;
+}
+

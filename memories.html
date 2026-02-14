@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>I Love You</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="main-page">
+  <nav>I Love You</nav>
+  <div class="container">
+    <h1>I love you forever</h1>
+<div class="music-card">
+  <img src="media/memo/amr.png" class="music-img" alt="cover"/>
+  <div style="flex:1">
+    <div style="font-weight:bold;font-size:18px">Hobbo Ganna</div>
+    <div style="opacity:0.9">Sherine </div>
+    <div style="margin-top:10px" class="controls">
+      <button id="playBtn" class="btn">▶ Play</button>
+      <button id="pauseBtn" class="btn">⏸ Pause</button>
+    </div>
+    <div style="margin-top:8px" class="timer" id="loveTimer"></div>
+  </div>
+</div>
+
+<div class="carousel">
+  <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+
+  <div class="carousel-inner" id="carouselInner">
+    <img src="media/memo/1.jpg" alt="Memory 1">
+    <img src="media/memo/2.jpg" alt="Memory 2">
+    <img src="media/memo/3.jpg" alt="Memory 3">
+    <img src="media/memo/4.jpg" alt="Memory 4">
+    <img src="media/memo/5.jpg" alt="Memory 5">
+    <img src="media/memo/6.jpg" alt="Memory 6">
+    <img src="media/memo/7.jpg" alt="Memory 7">
+    <img src="media/memo/8.jpg" alt="Memory 8">
+    <img src="media/memo/9.jpg" alt="Memory 9">
+    <img src="media/memo/10.jpg" alt="Memory 10">
+    <img src="media/memo/11.jpg" alt="Memory 11">
+    <img src="media/memo/12.jpg" alt="Memory 12">
+    <img src="media/memo/13.jpg" alt="Memory 13">
+    <img src="media/memo/14.jpg" alt="Memory 14">
+    <img src="media/memo/15.jpg" alt="Memory 15">
+    <img src="media/memo/16.jpg" alt="Memory 16">
+
+
+
+
+  </div>
+
+  <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+</div>
+
+
+
+<!-- عنصر الصوت بدون controls -->
+<audio id="audioPlayer">
+  <source src="media/memo/song.mp3" type="audio/mpeg">
+  متصفحك لا يدعم تشغيل الصوت.
+</audio>
+
+<script>
+  const audio = document.getElementById("audioPlayer");
+  const playBtn = document.getElementById("playBtn");
+  const pauseBtn = document.getElementById("pauseBtn");
+
+  playBtn.addEventListener("click", () => {
+    audio.play();
+  });
+
+  pauseBtn.addEventListener("click", () => {
+    audio.pause();
+  });
+</script>
+
+  <script src="mem_script.js"></script>
+<a href="ending.html" class="next-btn">Next →</a>
+
+<script>
+  let index = 0;
+  const slides = document.querySelectorAll("#carouselInner img");
+  let autoSlide;
+
+  function showSlide(i) {
+    index = (i + slides.length) % slides.length;
+    document.getElementById("carouselInner").scrollTo({
+      left: slides[index].offsetLeft,
+      behavior: "smooth"
+    });
+  }
+
+  function nextSlide() {
+    stopAutoSlide();
+    showSlide(index + 1);
+  }
+
+  function prevSlide() {
+    stopAutoSlide();
+    showSlide(index - 1);
+  }
+
+  function startAutoSlide() {
+    autoSlide = setInterval(() => {
+      index++;
+      showSlide(index);
+    }, 4000);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlide);
+  }
+
+  startAutoSlide();
+</script>
+
+
+
+</body>
+</html>

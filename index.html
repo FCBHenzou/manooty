@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>I Love You</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div id="gate" class="overlay">
+    <div class="card">
+      <h2>Enter Password</h2>
+      <input id="pwd" type="password" placeholder="password"/>
+      <button id="unlock">Unlock</button>
+      <p id="msg" class="muted"></p>
+    </div>
+  </div>
+
+  <!-- flower step (hidden initially) -->
+  <div id="flowerStep" class="overlay hidden">
+    <div class="card">
+      <h2>🌹 Click the rose</h2>
+      <button id="roseBtn" class="rose">🌹</button>
+      <p id="flowerMsg" class="muted"></p>
+      <button id="toMemories" class="btn hidden">Next ❤️</button>
+    </div>
+  </div>
+
+  <script src="gate_script.js"></script>
+</body>
+</html>
